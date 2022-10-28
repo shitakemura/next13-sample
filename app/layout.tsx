@@ -1,7 +1,9 @@
-import Link from 'next/link'
 import 'tailwindcss/tailwind.css'
+import NavLink from './nav-link'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  console.log('rendering')
+
   return (
     <html className="bg-gray-900 text-gray-100 antialiased">
       <head>
@@ -11,8 +13,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header className="border-b p-4">
           <nav className="space-x-4">
-            <Link href="/">Home</Link>
-            <Link href="/movies">Movies</Link>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/movies">Movies</NavLink>
           </nav>
         </header>
         <div className="p-4">{children}</div>
