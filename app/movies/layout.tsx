@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex">
-      <ul className="pr-10 text-sm">
+      <ul className="pr-10 text-sm flex-none">
         {movies.map((movie: Movie) => (
           <li key={movie.id}>
             <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
