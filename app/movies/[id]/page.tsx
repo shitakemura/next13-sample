@@ -6,7 +6,12 @@ async function getMovie(id: number) {
   return res.json()
 }
 
-export default function Page({ params }: { params: { id: number } }) {
+type PageProps = {
+  params?: any
+  children?: React.ReactNode
+}
+
+export default function Page({ params }: PageProps) {
   const movie = use(getMovie(params.id))
 
   return (
