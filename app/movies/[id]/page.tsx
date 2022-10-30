@@ -1,4 +1,5 @@
 import { use } from 'react'
+import { Movie } from '../../../types/movie'
 
 async function getMovie(id: number) {
   const res = await fetch(`http://localhost:3000/api/movies/${id}`)
@@ -21,4 +22,11 @@ export default function Page({ params }: PageProps) {
       <p className="mt-2">{movie.description}</p>
     </div>
   )
+}
+
+export async function generateStaticParams() {
+  const res = await fetch('http://localhost:3000/api/movies')
+  const movies = await res.json()
+
+  return movies.map((movie: Movie) => ({ id: movie.id }))
 }
