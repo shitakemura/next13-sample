@@ -24,4 +24,5 @@ export const trpc = createTRPCNext<AppRouter>({
       ],
     }
   },
+  ssr: true,
 })
