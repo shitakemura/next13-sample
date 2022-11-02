@@ -13,7 +13,7 @@ const appRouter = t.router({
     )
     .query(({ input }) => {
       return {
-        text: `hello ${input?.name ?? 'world'}`,
+        text: `hello ${input.name}`,
       }
     }),
 })
